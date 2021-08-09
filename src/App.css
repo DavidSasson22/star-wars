@@ -8,8 +8,21 @@ header {
   padding: 32px;
   background-color: beige;
   text-align: center;
+  height: 128px;
 }
 
 header h1 {
   text-transform: uppercase;
+}
+
+@media only screen and (max-width: 500px) {
+  header {
+    height: auto;
+    padding: 24px;
+  }
+  header h1,
+  header h2 {
+    font-size: small;
+    color: red;
+  }
 }
