@@ -1,6 +1,7 @@
 .flex-wraper {
   display: flex;
   left: 0;
+  top: 0;
   position: absolute;
   transition: ease-in-out 0.5s;
 }
@@ -8,6 +9,7 @@
 .table-of-content {
   color: white;
   padding: 16px;
+  padding-top: 64px;
   text-align: center;
   display: flex;
   flex-direction: column;

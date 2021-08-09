@@ -16,10 +16,7 @@ header h1 {
 }
 
 main {
-  position: relative;
   display: flex;
-  flex-direction: row;
-  background-color: tomato;
 }
 
 /*

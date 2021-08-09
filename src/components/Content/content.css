@@ -5,8 +5,17 @@ article {
   justify-content: center;
   align-items: center;
   padding: 16px 16px 16px 64px;
+  margin-top: 32px;
 }
 
 article h2 {
   text-align: center;
+}
+
+.articale-wraper {
+  max-width: 640px;
+}
+
+p {
+  font-size: 24px;
 }
