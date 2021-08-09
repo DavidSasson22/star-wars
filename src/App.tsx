@@ -5,18 +5,24 @@ import { isInLocalStorage, setStarWarsLocalStorage } from './assets/localStorage
 
 import './app.css';
 import Toc from './components/Toc/Toc';
+import Content from './components/Content/Content';
 
 function App() {
 
   const [loader, setLoader] = useState(false);
   const [error, setError] = useState(false);
   const [moviesData, setMoviesData] = useState(null);
-  const [movieTableData, setMovieTableData] = useState(null);
+  const [movieTableData, setMovieTableData] = useState({ title: "Waiting...", opening_crawl: "" });
 
   let myLocalData = isInLocalStorage('star-wars-api');
   if (myLocalData && !moviesData) {
     setMoviesData(myLocalData);
   }
+
+
+  useEffect(() => {
+    console.log(movieTableData);
+  }, [movieTableData])
 
 
   useEffect(() => {
@@ -52,6 +58,10 @@ function App() {
   }, [moviesData])
 
 
+  const contentTitleDisplayer = () => {
+    return <Content title={movieTableData.title} description={movieTableData.opening_crawl} />
+  }
+
   return (
     <div className="App">
       <header>
@@ -60,6 +70,7 @@ function App() {
       </header>
       <main>
         <Toc loader={loader} error={error} moviesData={moviesData} chooseMovie={setMovieTableData} />
+        {movieTableData && contentTitleDisplayer()}
       </main>
     </div>
   );

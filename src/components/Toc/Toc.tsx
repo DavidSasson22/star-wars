@@ -6,8 +6,8 @@ import "./toc.css"
 type Props = {
   loader: boolean,
   error: boolean,
-  moviesData: { title: string, isLiked: boolean }[] | null,
-  chooseMovie: Function
+  moviesData: { title: string, isLiked: boolean, opening_crawl: string }[] | null,
+  chooseMovie: Function,
 }
 
 const Toc: React.FC<Props> = ({ loader, error, moviesData, chooseMovie }) => {
@@ -20,7 +20,7 @@ const Toc: React.FC<Props> = ({ loader, error, moviesData, chooseMovie }) => {
   const buttonDisplaer = () => {
     if (moviesData)
       return moviesData.map((movie, i) => {
-        return <NarrowButton key={i} title={movie.title} like={movie.isLiked} />
+        return <NarrowButton key={i} title={movie.title} like={movie.isLiked} index={i} chooseMovie={chooseMovie} moviesData={moviesData} />
       })
   }
 

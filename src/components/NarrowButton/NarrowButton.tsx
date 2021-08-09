@@ -5,13 +5,17 @@ import './narrowBotton.css'
 type Props = {
   title: string,
   like: boolean,
+  index: any,
+  chooseMovie: Function,
+  moviesData: any
+
 }
 
-const NarrowButton: React.FC<Props> = ({ title, like }) => {
+const NarrowButton: React.FC<Props> = ({ title, like, index, chooseMovie, moviesData }) => {
   return (
-    <button>
+    <button onClick={() => chooseMovie(moviesData[index])}>
       {title}
-      {like ? <i className="heart icon red"></i> : <i className="heart icon" ></i>}
+      {like ? <i className="heart icon red"></i> : <i className="heart icon transperent" ></i>}
     </button>
   )
 }
