@@ -3,20 +3,21 @@
   position: absolute;
   left: 0;
   transition: ease-in-out 0.5s;
+  opacity: 0.5;
 }
 
 .table-of-content {
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
-  width: 100px;
+  width: 300px;
   height: 100vh;
   background-color: blue;
 }
 
 .left-hiden {
   position: absolute;
-  left: -100px;
+  left: -300px;
 }
 
 .table-displayer {
