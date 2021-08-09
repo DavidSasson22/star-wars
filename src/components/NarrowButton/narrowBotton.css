@@ -1,0 +1,15 @@
+button {
+  padding: 16px;
+  margin: 8px 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+.transperent {
+  color: transparent;
+}
+
+.red {
+  color: red;
+}

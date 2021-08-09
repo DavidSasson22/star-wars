@@ -1,9 +1,20 @@
-import React from 'react'
+import React from 'react';
+import './narrowBotton.css'
 
-export default function NarrowButton() {
+
+type Props = {
+  title: string,
+  like: boolean,
+}
+
+const NarrowButton: React.FC<Props> = ({ title, like }) => {
   return (
     <button>
-      hello
+      {title}
+      {like ? <i className="heart icon red"></i> : <i className="heart icon" ></i>}
     </button>
   )
 }
+
+
+export default NarrowButton

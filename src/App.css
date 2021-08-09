@@ -33,6 +33,6 @@ main {
   header h1,
   header h2 {
     font-size: small;
-    color: red;
+    margin: 8px 0;
   }
 }
