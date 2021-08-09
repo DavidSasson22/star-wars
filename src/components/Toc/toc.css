@@ -1,0 +1,30 @@
+.flex-wraper {
+  display: flex;
+  position: absolute;
+  left: 0;
+  transition: ease-in-out 0.5s;
+}
+
+.table-of-content {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  width: 100px;
+  height: 100vh;
+  background-color: blue;
+}
+
+.left-hiden {
+  position: absolute;
+  left: -100px;
+}
+
+.table-displayer {
+  width: 32px;
+  height: 100vh;
+  background-color: grey;
+}
+
+.table-of-content::-webkit-scrollbar {
+  display: none;
+}
