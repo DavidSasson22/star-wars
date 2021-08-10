@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { movieLikerDisliker, isInLocalStorage } from '../../assets/localStorage'
+import React from 'react';
+import { movieLikerDisliker } from '../../assets/localStorage'
 import './content.css';
 
 
@@ -14,17 +14,14 @@ type Props = {
 
 const Content: React.FC<Props> = ({ title, description, currentMovieIndex, setMoviesData, isLiked }) => {
 
-  isLiked = isLiked[currentMovieIndex].isLiked;
+  if (isLiked !== null) { isLiked = isLiked[currentMovieIndex].isLiked };
 
   const likeHandler = () => {
     let newMoviesData = movieLikerDisliker(currentMovieIndex);
     newMoviesData && setMoviesData(newMoviesData);
   }
 
-  useEffect(() => {
-    console.log(`ative everyTime`);
-    console.log(currentMovieIndex);
-  })
+
 
   return (
     <article>
@@ -33,9 +30,14 @@ const Content: React.FC<Props> = ({ title, description, currentMovieIndex, setMo
         <p>{description}</p>
       </div>
       <div className="likeBtn" onClick={() => likeHandler()}>
-        <button>
-          {isLiked ? <i className="heart icon red"></i> : <i className="heart icon white" ></i>}
-        </button>
+        {(isLiked !== null && title !== "Please choose a movie...") &&
+          <>
+            <br />
+            <button className="heart-btn">
+              {isLiked ? <i className="heart icon red"></i> : <i className="heart icon white" ></i>}
+            </button>
+          </>
+        }
       </div>
     </article>
   )

@@ -13,6 +13,7 @@ type Props = {
 }
 
 const NarrowButton: React.FC<Props> = ({ title, like, index, chooseMovie, moviesData, indexSetter }) => {
+
   return (
     <button onClick={() => {
       chooseMovie(moviesData[index]);
