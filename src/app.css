@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "StarJedi";
+  src: local("StarJedi"), url("./fonts/StarJedi-DGRW.ttf") format("ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("./assets/backgrounds/mainBackground.jpg");
+}
+
+header {
+  padding: 32px;
+  text-align: center;
+  height: 128px;
+  color: black;
+  -webkit-text-stroke: 1px #f6e03c;
+}
+
+header h1 {
+  text-transform: uppercase;
+}
+
+main {
+  display: flex;
+}
+
+/*
+                    ============
+                    Media Quires
+                    ============ 
+ */
+
+@media only screen and (max-width: 500px) {
+  header {
+    height: auto;
+    padding: 24px;
+    padding-left: 56px;
+  }
+  header h1,
+  header h2 {
+    font-size: small;
+    margin: 8px 0;
+  }
+}
