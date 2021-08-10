@@ -8,9 +8,10 @@ type Props = {
   error: boolean,
   moviesData: { title: string, isLiked: boolean, opening_crawl: string }[] | null,
   chooseMovie: Function,
+  indexSetter: any
 }
 
-const Toc: React.FC<Props> = ({ loader, error, moviesData, chooseMovie }) => {
+const Toc: React.FC<Props> = ({ loader, error, moviesData, chooseMovie, indexSetter }) => {
   const [displyToc, setDisplatToc] = useState("flex-wraper");
 
   const tocDisplayer = (): void => {
@@ -20,7 +21,7 @@ const Toc: React.FC<Props> = ({ loader, error, moviesData, chooseMovie }) => {
   const buttonDisplaer = () => {
     if (moviesData)
       return moviesData.map((movie, i) => {
-        return <NarrowButton key={i} title={movie.title} like={movie.isLiked} index={i} chooseMovie={chooseMovie} moviesData={moviesData} />
+        return <NarrowButton key={i} title={movie.title} like={movie.isLiked} index={i} chooseMovie={chooseMovie} moviesData={moviesData} indexSetter={indexSetter} />
       })
   }
 

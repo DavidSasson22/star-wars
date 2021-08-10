@@ -12,17 +12,13 @@ function App() {
   const [loader, setLoader] = useState(false);
   const [error, setError] = useState(false);
   const [moviesData, setMoviesData] = useState(null);
-  const [movieTableData, setMovieTableData] = useState({ title: "Please choose a movie...", opening_crawl: "" });
+  const [movieTableData, setMovieTableData] = useState({ title: "Please choose a movie...", opening_crawl: "", isLiked: false });
+  const [currentMovieIndex, setCurrentMovieIndex] = useState(0);
 
   let myLocalData = isInLocalStorage('star-wars-api');
   if (myLocalData && !moviesData) {
     setMoviesData(myLocalData);
   }
-
-
-  useEffect(() => {
-    console.log(movieTableData);
-  }, [movieTableData])
 
 
   useEffect(() => {
@@ -37,8 +33,7 @@ function App() {
           console.log("recived data");
           setStarWarsLocalStorage(movies);
           console.log("data set in local storage");
-          setMoviesData(isInLocalStorage('star-wars-api'));
-          console.log(moviesData);
+          setMoviesData(await isInLocalStorage('star-wars-api'));
           setLoader(false)
 
         } catch (e) {
@@ -50,8 +45,7 @@ function App() {
         setLoader(false);
         setError(false);
         console.log('found data in local storage');
-        console.log(moviesData);
-
+        setMoviesData(moviesData);
       }
     }
     getMovies();
@@ -59,7 +53,13 @@ function App() {
 
 
   const contentTitleDisplayer = () => {
-    return <Content title={movieTableData.title} description={movieTableData.opening_crawl} />
+    return <Content
+      title={movieTableData.title}
+      description={movieTableData.opening_crawl}
+      currentMovieIndex={currentMovieIndex}
+      setMoviesData={setMoviesData}
+      isLiked={moviesData}
+    />
   }
 
   return (
@@ -69,7 +69,7 @@ function App() {
         <h2>Everything you need to know about star wars' movies</h2>
       </header>
       <main>
-        <Toc loader={loader} error={error} moviesData={moviesData} chooseMovie={setMovieTableData} />
+        <Toc loader={loader} error={error} moviesData={moviesData} chooseMovie={setMovieTableData} indexSetter={setCurrentMovieIndex} />
         {!loader && contentTitleDisplayer()}
       </main>
     </div>
