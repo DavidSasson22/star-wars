@@ -16,7 +16,7 @@
   overflow-y: scroll;
   width: 300px;
   height: 100vh;
-  background-color: blue;
+  background-image: url("../../assets/backgrounds/skyBackground.jpg");
 }
 
 .left-hiden {
@@ -30,7 +30,8 @@
   justify-content: center;
   width: 32px;
   height: 100vh;
-  background-color: grey;
+  background-color: black;
+  border-right: white 1px solid;
   color: white;
   cursor: pointer;
 }

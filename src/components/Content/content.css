@@ -2,10 +2,14 @@ article {
   width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   padding: 16px 16px 16px 64px;
   margin-top: 32px;
+  -webkit-text-stroke: 1px black;
+  color: white;
+  height: calc(100vh - 128px -2em);
+  overflow: scroll;
 }
 
 article h2 {
@@ -17,6 +21,9 @@ article h2 {
   overflow: scroll;
 }
 
+.articale::-webkit-scrollbar {
+  display: none;
+}
 .articale-wraper::-webkit-scrollbar {
   display: none;
 }
@@ -24,6 +31,10 @@ article h2 {
 .heart-btn {
   border: none;
   background-color: black;
+}
+
+#icon {
+  font-size: 2em;
 }
 
 p {

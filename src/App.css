@@ -1,6 +1,6 @@
 @font-face {
   font-family: "StarJedi";
-  src: url("./fonts/StarJedi-DGRW.ttf");
+  src: local("StarJedi"), url("./fonts/StarJedi-DGRW.ttf") format("ttf");
 }
 
 * {
@@ -9,12 +9,16 @@
   box-sizing: border-box;
 }
 
+body {
+  background-image: url("./assets/backgrounds/mainBackground.jpg");
+}
+
 header {
   padding: 32px;
-  background-color: beige;
   text-align: center;
   height: 128px;
-  font-family: "StarJedi";
+  color: black;
+  -webkit-text-stroke: 1px #f6e03c;
 }
 
 header h1 {

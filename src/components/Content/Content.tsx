@@ -34,7 +34,7 @@ const Content: React.FC<Props> = ({ title, description, currentMovieIndex, setMo
           <>
             <br />
             <button className="heart-btn">
-              {isLiked ? <i className="heart icon red"></i> : <i className="heart icon white" ></i>}
+              {isLiked ? <i className="heart icon red" id="icon"></i> : <i id="icon" className="heart icon white" ></i>}
             </button>
           </>
         }
