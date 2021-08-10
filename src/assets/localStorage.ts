@@ -9,5 +9,14 @@ export const setStarWarsLocalStorage = (movies: []): void => {
     let newMovie: {} = { ...movie, isLiked: false };
     result.push(newMovie);
   });
-  localStorage.setItem('star-wars-api', JSON.stringify(result));
+  localStorage.setItem("star-wars-api", JSON.stringify(result));
+};
+
+export const movieLikerDisliker = (movieIndex: number): void => {
+  let data = isInLocalStorage("star-wars-api");
+  let result: any;
+  if (data) {
+    result = [...data, (data[movieIndex].isLiked = !data[movieIndex].isLiked)];
+  }
+  setStarWarsLocalStorage(result);
 };

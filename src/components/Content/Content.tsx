@@ -1,5 +1,7 @@
 import React from 'react';
+import { movieLikerDisliker } from '../../assets/localStorage'
 import './content.css';
+
 
 
 type Props = {
@@ -13,6 +15,9 @@ const Content: React.FC<Props> = ({ title, description }) => {
       <div className="articale-wraper">
         <h2>{title}</h2>
         <p>{description}</p>
+      </div>
+      <div className="likeBtn">
+
       </div>
     </article>
   )

@@ -34,7 +34,3 @@
   color: white;
   cursor: pointer;
 }
-
-.table-of-content::-webkit-scrollbar {
-  display: none;
-}
