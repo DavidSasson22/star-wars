@@ -14,8 +14,19 @@ article h2 {
 
 .articale-wraper {
   max-width: 640px;
+  overflow: scroll;
+}
+
+.articale-wraper::-webkit-scrollbar {
+  display: none;
 }
 
 p {
   font-size: 24px;
+}
+
+@media only screen and (max-width: 500px) {
+  article p {
+    font-size: 16px;
+  }
 }

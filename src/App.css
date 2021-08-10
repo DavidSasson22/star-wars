@@ -29,6 +29,7 @@ main {
   header {
     height: auto;
     padding: 24px;
+    padding-left: 56px;
   }
   header h1,
   header h2 {

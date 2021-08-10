@@ -12,7 +12,7 @@ function App() {
   const [loader, setLoader] = useState(false);
   const [error, setError] = useState(false);
   const [moviesData, setMoviesData] = useState(null);
-  const [movieTableData, setMovieTableData] = useState({ title: "Waiting...", opening_crawl: "" });
+  const [movieTableData, setMovieTableData] = useState({ title: "Please choose a movie...", opening_crawl: "" });
 
   let myLocalData = isInLocalStorage('star-wars-api');
   if (myLocalData && !moviesData) {
@@ -70,7 +70,7 @@ function App() {
       </header>
       <main>
         <Toc loader={loader} error={error} moviesData={moviesData} chooseMovie={setMovieTableData} />
-        {movieTableData && contentTitleDisplayer()}
+        {!loader && contentTitleDisplayer()}
       </main>
     </div>
   );
