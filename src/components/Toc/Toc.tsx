@@ -32,7 +32,7 @@ const Toc: React.FC<Props> = ({ loader, error, moviesData, chooseMovie, indexSet
         {moviesData && buttonDisplaer()}
       </div>
       <div className="table-displayer" onClick={() => tocDisplayer()}>
-        <i className="angle double right icon"></i>
+        CLICK   <i className="angle double right icon"></i>   HERE
       </div>
       {loader && <Loader />}
       {error && <h3>Somthing went wrong...</h3>}

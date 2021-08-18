@@ -34,4 +34,6 @@
   border-right: white 1px solid;
   color: white;
   cursor: pointer;
+  writing-mode: tb-rl;
+  transform: rotate(-180deg);
 }
