@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { isInLocalStorage, setStarWarsLocalStorage } from './assets/localStorage';
 
-import './app.css';
+import './App.css';
 import Toc from './components/Toc/Toc';
 import Content from './components/Content/Content';
 
